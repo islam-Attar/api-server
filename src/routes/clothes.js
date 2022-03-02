@@ -37,7 +37,7 @@ async function deleteClothes(req,res){
 
 async function updatedClothes(req,res){
  let body = req.body;
- let id = req.params.id;  
+ let id = req.params.id;
  
   const UpdatedClothes = await Clothes.update(body, id);
     res.status(201).json(UpdatedClothes);
