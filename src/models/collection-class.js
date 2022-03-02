@@ -16,6 +16,7 @@ class Collection {
      console.log('error in creating new record for model: ', this.model.name);
    }
  }
+
 //---------------------------GET----------------------
  async get(id){
    try{
@@ -29,6 +30,7 @@ class Collection {
       console.log('error in reading record(s) for model: ', this.model.name);
     }
    }
+
 //--------------------------UPDATE-------------------------
    async update(body, id){
     try{
@@ -38,13 +40,14 @@ class Collection {
        console.log('error in updating record for model: ', this.model.name);
      }
     }
+    
 //-----------------------------DELETE------------------------
 async delete(id){
   try{
     let deletedID = await this.model.findOne({where: {id:id}});
     return deletedID.destroy(id);
    } catch(e){
-     console.log('error in updating record for model: ', this.model.name);
+     console.log('error in deleting record for model: ', this.model.name);
    }
   }
  }
